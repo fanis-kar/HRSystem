@@ -1,0 +1,50 @@
+http://localhost:56890/api/1.0/department
+
+===================================================================
+
+> cd C:\Users\fanis\source\repos\HRSystem
+> ng new HRSystem.UI
+
+> cd C:\Users\fanis\source\repos\HRSystem\HRSystem.UI
+> code .
+> ng serve --open
+
+===================================================================
+
+Δύο κύρια components. Department (show/delete & add/edit) & Employee (show/delete & add/edit)
+> ng generate component department
+> ng generate component department/show-department
+> ng generate component department/add-edit-department
+
+> ng generate component employee
+> ng generate component employee/show-employee
+> ng generate component employee/add-edit-employee
+
+Ένα service για να κάνω consume τα Web APIs.
+
+> ng generate service shared
+
+===================================================================
+
+Φτιάχνω την λειτουργηκότητα που κάνει consume τα services
+στο ..\src\app\app.module.ts
+
+===================================================================
+
+Φτιάχνω τα Routes 
+στο ..\src\app\app-routing.module.ts
+
+===================================================================
+
+Εισάγουμε την Bootstrap στο project
+
+ng add @ng-bootstrap/ng-bootstrap
+
+===================================================================
+
+
+===================================================================
+
+===================================================================
+
+===================================================================
