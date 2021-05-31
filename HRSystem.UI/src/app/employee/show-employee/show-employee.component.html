@@ -1,1 +1,24 @@
-<p>show-employee works!</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full name</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let dataItem of EmployeeList">
+                <td>{{dataItem.Id}}</td>        
+                <td>{{dataItem.FirstName + ' ' + dataItem.LastName}}</td>  
+                <td>{{dataItem.Created | date:'dd/MM/yyyy' }}</td>  
+                <td>
+                    <button class="btn btn-primary mr-1">Update</button>
+                    <button class="btn btn-primary mr-1">Delete</button>
+                </td>                  
+            </tr>
+        </tbody>
+    </table>
+</div>

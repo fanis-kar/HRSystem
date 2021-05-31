@@ -15,5 +15,12 @@ namespace HRSystem.DAL
 
         DbSet<Employee> Employees { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Department>()
+                .Property(d => d.Name)
+                .HasMaxLength(10);
+        }
     }
 }

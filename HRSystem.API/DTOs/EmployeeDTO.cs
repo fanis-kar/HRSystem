@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace HRSystem.API.DTOs
 {
-    public class EmployeeDTO
+    public class EmployeeDTO : BaseEntityDTO
     {
-        public int Id { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

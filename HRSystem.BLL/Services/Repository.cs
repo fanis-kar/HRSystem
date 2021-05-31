@@ -11,8 +11,7 @@ namespace HRSystem.BLL.Services
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly ApplicationDbContext context;
-        private DbSet<T> entities;
-        string errorMessage = string.Empty;
+        private readonly DbSet<T> entities;
 
         public Repository(ApplicationDbContext context)
         {
@@ -25,38 +24,37 @@ namespace HRSystem.BLL.Services
             return entities.AsEnumerable();
         }
 
-        public T Get(long id)
+        public T Get(int id)
         {
             return entities.SingleOrDefault(s => s.Id == id);
         }
 
-        public void Insert(T entity)
+        public T Insert(T entity)
         {
             if (entity == null)
-            {
                 throw new ArgumentNullException("entity");
-            }
 
             entities.Add(entity);
             context.SaveChanges();
+
+            return entity;
         }
 
-        public void Update(T entity)
+        public T Update(T entity)
         {
             if (entity == null)
-            {
                 throw new ArgumentNullException("entity");
-            }
 
+            entities.Update(entity);
             context.SaveChanges();
+
+            return entity;
         }
 
         public void Delete(T entity)
         {
             if (entity == null)
-            {
                 throw new ArgumentNullException("entity");
-            }
 
             entities.Remove(entity);
             context.SaveChanges();
